@@ -3,6 +3,13 @@
 This project reconstructs a virtual room environment from video or multi-view images using segmentation and generation pipelines. The output is a structured 3D scene ready for editing or VR interaction.
 
 ---
+## TO DO
+
+- [ ] Upload example dataset
+- [ ] Link example dataset in README
+- [ ] Draw pipeline diagram (Mermaid / draw.io)
+- [ ] Add module-level documentation
+- [ ] Merge alignment code + simple viewer (optional)
 
 ## 📦 Features
 
@@ -161,10 +168,3 @@ python white_background_with_specific_id_only_object.py
 python TRELLIS/example_multi_image.py
 ```
 
-## TO DO
-
-- [ ] Upload example dataset
-- [ ] Link example dataset in README
-- [ ] Draw pipeline diagram (Mermaid / draw.io)
-- [ ] Add module-level documentation
-- [ ] Merge alignment code + simple viewer (optional)
