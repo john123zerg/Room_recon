@@ -23,13 +23,13 @@ This project reconstructs a virtual room environment from video or multi-view im
 
 **Steps:**
 1. **Segmentation**  
-   • Grounded-SAM / RAM
+   • Grounded-SAM / RAM (Optional - extract the tags -> for new examples)
 2. **Object Tracking**  
-   • Across views or time
+   • GroundingDino
 3. **Object Reconstruction**  
-   • Instance-level 3D mesh / Gaussian group
+   • Instance-level 3D mesh -> TRELLIS
 4. **Mesh Alignment**  
-   • Top-down layout or VR axis alignment
+   • Load the ply file into a mesh
 
 
 
@@ -106,6 +106,11 @@ mv sam2.1_hq_hiera_large.pt checkpoints
 cd ../../
 ```
 
+Update the file in miscs.py
+```bash
+mv misc.py sam-hq/sam-hq2/sam2/utils
+```
+
 
 
 
@@ -129,19 +134,25 @@ cd ../
 #skip flash attention
 
 
+Update the example_multi_image in TRELLIS
+```
+mv example_multi_image.py TRELLIS
+```
+
 ```bash
 python tracking_with_freedino.py
 ```
-
+```bash
+python white_background_with_specific_id_only_object.py
+```
 
 ```bash
 python TRELLIS/example_multi_image.py
 ```
 
 ## TO DO
-- mv example_multi_image to mine
 - Upload example dataset
 - Link example dataset
 - draw pipeline
-- Modules
+- Modules doc?
 - Merge the alignment code + simple viewer (optional)
