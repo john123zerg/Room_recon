@@ -34,8 +34,11 @@ This project reconstructs a virtual room environment from video or multi-view im
 ## 🔧 Setup
 
 Python version : 3.10.16
+
 GPU : RTX 4090
+
 CUDA : 11.8
+
 Ubuntu : 24.04
 
 ```bash
