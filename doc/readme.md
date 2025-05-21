@@ -1,4 +1,5 @@
-# 🏠 VR Room Reconstruction Project
+# 🏠 VR Room Reconstruction Easy step guidelines (Scanning to reconstruction is provided)
+
 
 This project reconstructs a virtual room environment from video or multi-view images using segmentation and generation pipelines. The output is a structured 3D scene ready for editing or VR interaction.
 
@@ -12,7 +13,7 @@ This project reconstructs a virtual room environment from video or multi-view im
 - [ ] Merge alignment code + simple viewer (optional)
 
 ## 📦 Features
-
+- Easy i-phone ready to SLAM-based robust 3d reconstruction
 - Object-level segmentation from RGB inputs
 - Semantic and instance-aware labeling
 - Supports Gaussian Splatting or mesh-based reconstruction
@@ -28,7 +29,7 @@ This project reconstructs a virtual room environment from video or multi-view im
 
 **Input:** Trained 3D Scene (Gaussian or Mesh), RGB images,
 
-**Steps:**
+**Steps:** 
 1. **Segmentation**  
    • Grounded-SAM / RAM (Optional - extract the tags -> for new examples)
 
