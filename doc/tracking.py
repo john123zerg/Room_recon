@@ -17,11 +17,12 @@ from mask_dictionary_model import MaskDictionaryModel, ObjectInfo
 import json
 import copy
 
+# 추가: natsort 라이브러리 임포트
 try:
     from natsort import natsorted
 except ImportError:
-    print("natsort uninstalled. pip install natsort.")
-
+    print("natsort 라이브러리가 설치되어 있지 않습니다. pip install natsort로 설치해주세요.")
+    # 대체 구현 (natsort가 없을 경우)
     import re
     def natural_sort_key(s):
         return [int(text) if text.isdigit() else text.lower() for text in re.split(r'(\d+)', s)]
@@ -48,7 +49,7 @@ import re
 
 gsam2_path = os.path.join(os.path.dirname(__file__), "Grounded-SAM-2")
 
-sys.path.append(gsam2_path)  
+sys.path.append(gsam2_path)  # 또는 sys.path.insert(0, gsam2_path)
 
 # Replace Hugging Face API-based Grounding DINO initialization with local model loading
 from grounding_dino.groundingdino.util.inference import load_model, predict
@@ -343,6 +344,6 @@ for idx, fname in enumerate(result_files):
     old_path = os.path.join(result_dir, fname)
     new_path = os.path.join(result_dir, f"{idx:05d}.png")
     os.rename(old_path, new_path)
-    print(f'Renamed {old_path} to {new_path}')f
+    print(f'Renamed {old_path} to {new_path}')
 create_video_from_images(result_dir, output_video_path, frame_rate=30)
 
