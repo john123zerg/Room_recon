@@ -168,8 +168,8 @@ mv example_multi_image.py TRELLIS
 ```bash
 wget https://huggingface.co/datasets/johnkimryno/VR/resolve/main/images.zip
 unzip images.zip
-mkdir dataset
-mv images dataset
+mkdir datasets
+mv images datasets
 rm -rf images.zip
 ```
 
