@@ -111,21 +111,22 @@ cd sam-hq/sam-hq2
 pip install -e .
 ```
 
-Download the checkpoints individually from:
 
+
+Downloading checkpoints
+```bash
+wget https://huggingface.co/lkeab/hq-sam/resolve/main/sam2.1_hq_hiera_large.pt
+mv sam2.1_hq_hiera_large.pt checkpoints
+cd ../../
+```
+
+Downloading checkpoints directly ( place it in the sam-hq checkpoints folder)
 
 <!-- - [sam2.1_hiera_large.pt](https://dl.fbaipublicfiles.com/segment_anything_2/092824/sam2.1_hiera_large.pt) -->
 - [sam2.1_hq_hiera_large.pt](https://huggingface.co/lkeab/hq-sam/resolve/main/sam2.1_hq_hiera_large.pt?download=true)
 
 (note that these are the improved checkpoints denoted as SAM 2.1; see [Model Description](#model-description) for details.)
 
-or
-
-```bash
-wget https://huggingface.co/lkeab/hq-sam/resolve/main/sam2.1_hq_hiera_large.pt
-mv sam2.1_hq_hiera_large.pt checkpoints
-cd ../../
-```
 
 Update the file in miscs.py
 ```bash
