@@ -169,8 +169,8 @@ mv example_multi_image.py TRELLIS
 wget https://huggingface.co/datasets/johnkimryno/VR/resolve/main/images.zip
 unzip images.zip
 mkdir dataset
-mv images/images dataset
-rm -rf images
+mv images dataset
+rm -rf images.zip
 ```
 
 
