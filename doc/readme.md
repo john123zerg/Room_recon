@@ -6,7 +6,7 @@ This project reconstructs a virtual room environment from video or multi-view im
 ---
 ## TO DO
 
-- [ ] Upload example dataset
+- [v] Upload example dataset
 - [ ] Link example dataset in README
 - [ ] Draw pipeline diagram (Before meeting)
 - [ ] Add module-level documentation
