@@ -8,9 +8,7 @@ This project reconstructs a virtual room environment from video or multi-view im
 
 - Object-level segmentation from RGB inputs
 - Semantic and instance-aware labeling
-- 3D room layout generation using lifted masks
 - Supports Gaussian Splatting or mesh-based reconstruction
-- Editable scene graph for interactive VR use
 
 ---
 
@@ -29,7 +27,7 @@ This project reconstructs a virtual room environment from video or multi-view im
 3. **Object Reconstruction**  
    • Instance-level 3D mesh -> TRELLIS
 4. **Mesh Alignment**  
-   • Load the ply file into a mesh
+   • Load .ply files into a mesh viewer or editor
 
 
 
