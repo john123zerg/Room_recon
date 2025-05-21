@@ -7,7 +7,7 @@ This project reconstructs a virtual room environment from video or multi-view im
 
 - [ ] Upload example dataset
 - [ ] Link example dataset in README
-- [ ] Draw pipeline diagram (Mermaid / draw.io)
+- [ ] Draw pipeline diagram
 - [ ] Add module-level documentation
 - [ ] Merge alignment code + simple viewer (optional)
 
