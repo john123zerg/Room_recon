@@ -152,8 +152,9 @@ python TRELLIS/example_multi_image.py
 ```
 
 ## TO DO
-- Upload example dataset
-- Link example dataset
-- draw pipeline
-- Modules doc?
-- Merge the alignment code + simple viewer (optional)
+
+- [ ] Upload example dataset
+- [ ] Link example dataset in README
+- [ ] Draw pipeline diagram (Mermaid / draw.io)
+- [ ] Add module-level documentation
+- [ ] Merge alignment code + simple viewer (optional)
