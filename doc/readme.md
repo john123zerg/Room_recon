@@ -14,7 +14,7 @@ This project reconstructs a virtual room environment from video or multi-view im
 - [ ] Merge scanning ~ 3d reconstruction (SPLATAM)
 
 ## 📦 Features
-- Easy i-phone ready to SLAM-based robust 3d reconstruction
+- SLAM-based, robust 3D reconstruction (iPhone-ready)
 - Object-level segmentation from RGB inputs
 - Semantic and instance-aware labeling
 - Supports Gaussian Splatting or mesh-based reconstruction
