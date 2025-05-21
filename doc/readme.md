@@ -39,8 +39,11 @@ This project reconstructs a virtual room environment from video or multi-view im
    • GroundingDino
 4. **Object Reconstruction**  
    • Instance-level 3D mesh -> TRELLIS
-5. **Mesh Alignment**  
+   
+6. **Mesh Alignment**  
    • Load .ply files into a mesh viewer or editor
+   ![image](https://github.com/user-attachments/assets/a28861cd-b7e4-442e-96a6-f5ad0af0cd15)
+
 
 
 
