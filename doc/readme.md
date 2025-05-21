@@ -156,8 +156,11 @@ Update the example_multi_image in TRELLIS
 mv example_multi_image.py TRELLIS
 ```
 
+
+# EXAMPLES
+
 ```bash
-python tracking_with_freedino.py
+python tracking_with_dino.py
 ```
 
 ```bash
