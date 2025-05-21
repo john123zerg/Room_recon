@@ -178,11 +178,11 @@ rm -rf images.zip
 # EXAMPLES
 
 ```bash
-python tracking_with_dino.py
+python tracking.py
 ```
 
 ```bash
-python white_background_with_specific_id_only_object.py
+python white_background_object.py
 ```
 
 ```bash
