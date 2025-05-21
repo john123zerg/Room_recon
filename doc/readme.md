@@ -71,6 +71,9 @@ pip install torch==2.4.0 torchvision==0.19.0 torchaudio==2.4.0 --index-url https
 
 
 
+
+
+
 ## Segmentation + Object tracking 
 
 Git clone Grounded SAM 2
@@ -159,6 +162,17 @@ Update the example_multi_image in TRELLIS
 ```
 mv example_multi_image.py TRELLIS
 ```
+
+
+## Datasets (Example)
+```bash
+wget https://huggingface.co/datasets/johnkimryno/VR/resolve/main/images.zip
+unzip images.zip
+mkdir dataset
+mv images/images dataset
+rm -rf images
+```
+
 
 
 # EXAMPLES
