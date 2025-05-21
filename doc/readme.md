@@ -8,7 +8,7 @@ This project reconstructs a virtual room environment from video or multi-view im
 
 - [x] Upload example dataset
 - [x] Link example dataset in README
-- [ ] Draw pipeline diagram (Before meeting)
+- [ ] Build better pipeline diagram
 - [ ] Add module-level documentation
 - [ ] Merge alignment code + simple viewer (optional)
 - [ ] Merge scanning ~ 3d reconstruction (SPLATAM)
