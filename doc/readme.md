@@ -7,10 +7,11 @@ This project reconstructs a virtual room environment from video or multi-view im
 ## TO DO
 
 - [x] Upload example dataset
-- [ ] Link example dataset in README
+- [x] Link example dataset in README
 - [ ] Draw pipeline diagram (Before meeting)
 - [ ] Add module-level documentation
 - [ ] Merge alignment code + simple viewer (optional)
+- [ ] Merge scanning ~ 3d reconstruction (SPLATAM)
 
 ## 📦 Features
 - Easy i-phone ready to SLAM-based robust 3d reconstruction
@@ -37,7 +38,8 @@ This project reconstructs a virtual room environment from video or multi-view im
 
 3. **Object Tracking**  
    • GroundingDino
-4. **Object Reconstruction**  
+   
+5. **Object Reconstruction**  
    • Instance-level 3D mesh -> TRELLIS
    
 6. **Mesh Alignment**  
@@ -71,8 +73,6 @@ You can always install a different version than cuda 11.8 but should be aware th
 ```bash
 pip install torch==2.4.0 torchvision==0.19.0 torchaudio==2.4.0 --index-url https://download.pytorch.org/whl/cu118
 ```
-
-
 
 
 
