@@ -7,7 +7,7 @@ This project reconstructs a virtual room environment from video or multi-view im
 
 - [ ] Upload example dataset
 - [ ] Link example dataset in README
-- [ ] Draw pipeline diagram
+- [ ] Draw pipeline diagram (Before meeting)
 - [ ] Add module-level documentation
 - [ ] Merge alignment code + simple viewer (optional)
 
@@ -23,6 +23,8 @@ This project reconstructs a virtual room environment from video or multi-view im
 
 
 ## 🚀 Pipeline Overview
+![image](https://github.com/user-attachments/assets/64efd992-58d3-4b67-9123-c7b902b03a9e)
+
 
 **Input:** Trained 3D Scene (Gaussian or Mesh), RGB images,
 
