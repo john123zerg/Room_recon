@@ -22,11 +22,14 @@ This project reconstructs a virtual room environment from video or multi-view im
 **Steps:**
 1. **Segmentation**  
    • Grounded-SAM / RAM (Optional - extract the tags -> for new examples)
-2. **Object Tracking**  
+
+   ![output 1](https://github.com/user-attachments/assets/977aa565-3102-4d6e-82dc-0b9c12bb4f28)
+
+3. **Object Tracking**  
    • GroundingDino
-3. **Object Reconstruction**  
+4. **Object Reconstruction**  
    • Instance-level 3D mesh -> TRELLIS
-4. **Mesh Alignment**  
+5. **Mesh Alignment**  
    • Load .ply files into a mesh viewer or editor
 
 
@@ -48,13 +51,20 @@ mkdir SegGen
 cd SegGen
 ```
 
-## Torch+cu118 installation
+Torch+cu118 installation
+
+You can always install a different version than cuda 11.8 but should be aware that 11.8, 12.1, 12.4 are preferable.
 
 ```bash
 pip install torch==2.4.0 torchvision==0.19.0 torchaudio==2.4.0 --index-url https://download.pytorch.org/whl/cu118
 ```
 
+
+
+## Segmentation + Object tracking 
+
 Git clone Grounded SAM 2
+
 ```bash
 git clone https://github.com/IDEA-Research/Grounded-SAM-2.git
 cd Grounded-SAM-2
@@ -81,7 +91,7 @@ cd ../
 
 
 
-
+# Better results ( Use SAM - high quality )
 
 Clone SAM_HQ2
 
@@ -115,7 +125,7 @@ mv misc.py sam-hq/sam-hq2/sam2/utils
 
 
 
-### TRELLIS
+# TRELLIS - object mesh generation
 ```bash
 git clone --recurse-submodules https://github.com/microsoft/TRELLIS.git
 cd TRELLIS
@@ -132,7 +142,6 @@ pip install xformers==0.0.27.post2 --index-url https://download.pytorch.org/whl/
 pip install kaolin -f https://nvidia-kaolin.s3.us-east-2.amazonaws.com/torch-2.4.0_cu118.html  #These are just lines since the shell script has issues
 cd ../
 ```
-#skip flash attention
 
 
 Update the example_multi_image in TRELLIS
@@ -143,6 +152,7 @@ mv example_multi_image.py TRELLIS
 ```bash
 python tracking_with_freedino.py
 ```
+
 ```bash
 python white_background_with_specific_id_only_object.py
 ```
