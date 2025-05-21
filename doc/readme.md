@@ -130,7 +130,7 @@ cd ../
 
 
 ```bash
-python 
+python tracking_with_freedino.py
 ```
 
 
@@ -142,4 +142,6 @@ python TRELLIS/example_multi_image.py
 - mv example_multi_image to mine
 - Upload example dataset
 - Link example dataset
-- 
+- draw pipeline
+- Modules
+- Merge the alignment code + simple viewer (optional)
