@@ -42,7 +42,10 @@ This project reconstructs a virtual room environment from video or multi-view im
 5. **Object Reconstruction**  
    • Instance-level 3D mesh -> TRELLIS
    
-6. **Mesh Alignment**  
+   ![sample_multi](https://github.com/user-attachments/assets/d3fac01f-5f42-4bb5-9253-a23f18b45705)
+   
+
+7. **Mesh Alignment**  
    • Load .ply files into a mesh viewer or editor
    ![image](https://github.com/user-attachments/assets/a28861cd-b7e4-442e-96a6-f5ad0af0cd15)
 
