@@ -78,6 +78,13 @@ After cloning, connect your iPhone to your Mac via USB and open the project in X
 
 - Tap **End** when done.
 
+
+### 7. Upload files
+
+Go to 'Files' and you will see a NeRFCapture folder.
+Sometimes the zip file is corrupted, so it is best to compress the original image data.
+Then, you can share the data to test the pipeline.
+
 ---
 
 ### ⚠️ Notes & Tips
