@@ -51,6 +51,12 @@ This project reconstructs a virtual room environment from video or multi-view im
 
 
 
+## 📄 Related Documentation
+
+- [Scan Setup Guide](./scan.md)
+
+
+
 
 ## 🔧 Setup
 
