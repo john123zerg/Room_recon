@@ -78,6 +78,8 @@ After cloning, connect your iPhone to your Mac via USB and open the project in X
 
 - Tap **End** when done.
 
+---
+
 
 ### 7. Upload files
 
