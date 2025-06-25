@@ -91,5 +91,6 @@ Then, you can share the data to test the pipeline.
 
 ### ⚠️ Notes & Tips
 
-- 📸 Try to hold the phone steady while scanning — motion blur can degrade quality.
+- 📸 Try to hold the phone steady while scanning — motion blur can degrade quality. (e.g., pause for 1.5 ~ 2 seconds after each frame)
+  - Also, try to overlap at least 30% of the previous frame for better quality.
 - 🗜️ If the ZIP export is corrupted, re-compress the original folder manually before processing.
