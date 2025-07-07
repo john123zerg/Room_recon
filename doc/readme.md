@@ -145,6 +145,7 @@ Downloading checkpoints directly ( place it in the sam-hq checkpoints folder)
 
 Update the file in miscs.py
 ```bash
+cp ../Room_recon/doc/misc.py ./misc.py
 mv misc.py sam-hq/sam-hq2/sam2/utils
 ```
 
@@ -172,7 +173,7 @@ cd ../
 
 Update the example_multi_image in TRELLIS
 ```
-mv example_multi_image.py TRELLIS
+mv ../Room_recon/doc/example_multi_image.py TRELLIS
 ```
 
 
@@ -183,6 +184,11 @@ unzip images.zip
 mkdir datasets
 mv images datasets
 rm -rf images.zip
+```
+
+```bash
+mv ../Room_recon/doc/tracking.py ./tracking.py
+python tracking.py
 ```
 
 
