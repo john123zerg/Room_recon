@@ -214,6 +214,12 @@ pip install timm
 ```
 
 ```bash
+cp ../Room_recon/doc/common_utils.py Grounded-SAM-2/utils
+cp ../Room_recon/doc/video_utils.py Grounded-SAM-2/utils
+```
+
+
+```bash
 cp ../Room_recon/doc/tracking.py ./tracking.py
 python tracking.py
 ```
