@@ -37,11 +37,13 @@ python scripts/final_eval.py
 
 ### 4. Label gs by voting
 ```bash
+cp ../../Room_recon/doc/label_gs_by_voting.py utils/
 python utils/label_gs_by_voting.py
 ```
 
 ### 5. Floor normal
 ```bash
+cp ../../Room_recon/doc/floor_normal.py utils/
 python utils/floor_normal.py
 ```
 
