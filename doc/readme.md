@@ -193,11 +193,17 @@ mv ../Room_recon/doc/example_multi_image.py TRELLIS
 
 ## Datasets (Example)
 ```bash
+mkdir datasets
+cd datasets
 wget https://huggingface.co/datasets/johnkimryno/VR/resolve/main/images.zip
 unzip images.zip
-mkdir datasets
-mv images datasets
 rm -rf images.zip
+wget https://huggingface.co/datasets/johnkimryno/VR/resolve/main/data_iphone.zip
+unzip data_iphone.zip
+wget https://huggingface.co/datasets/johnkimryno/VR/resolve/main/iphone_data_john.zip
+unzip iphone_data_john.zip
+rm -rf data_iphone.zip
+rm -rf iphone_data_john.zip
 ```
 ```bash
 pip install supervision
@@ -208,7 +214,7 @@ pip install timm
 ```
 
 ```bash
-mv ../Room_recon/doc/tracking.py ./tracking.py
+cp ../Room_recon/doc/tracking.py ./tracking.py
 python tracking.py
 ```
 
@@ -219,6 +225,7 @@ pwd should show **Seggen**
 
 
 ```bash
+cp ../Room_recon/doc/white_background_object.py ./
 python white_background_object.py
 ```
 
@@ -228,12 +235,7 @@ python TRELLIS/example_multi_image.py
 
 
 
-# Downloading data
 
-```bash
-wget https://huggingface.co/datasets/johnkimryno/VR/resolve/main/data_iphone.zip
-```
+## 📄 Related Documentation
 
-```bash
-wget https://huggingface.co/datasets/johnkimryno/VR/resolve/main/iphone_data_john.zip
-```
+- [Splatam Setup Guide](./splatam.md)
