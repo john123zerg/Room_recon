@@ -237,10 +237,11 @@ if __name__ == "__main__":
 
     my_label = np.array(list(folder_lut_reverse.values()))[label]
     
-    if not go_to_read_npy:
-        np.save(label_path, my_label)
-    else:
-        my_label = np.load(label_path)
+    # if not go_to_read_npy:
+    #     np.save(label_path, my_label)
+    # else:
+    #     my_label = np.load(label_path)
+    np.save(label_path, my_label)
 
     lut = {4:16, 16:16,5:22,11:22,22:22,9:15,15:15,7:14,14:14}
 
