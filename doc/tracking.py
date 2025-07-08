@@ -141,17 +141,59 @@ def merge_overlapping_boxes(input_boxes,confidences, class_names, iou_thresh=0.4
     return merged_boxes, merged_scores, merged_labels
 
 
+def resize_image_if_needed(image, max_dimension=960):
+    """
+    Resize image if either dimension exceeds max_dimension while maintaining aspect ratio
+    For images larger than 1600 pixels in any dimension, reduce to roughly half size
+    """
+    width, height = image.size
+    max_current = max(width, height)
+    
+    # If both dimensions are under the limit, return original
+    if max_current <= max_dimension:
+        return image
+    
+    # For very large images (>1600px), aim for roughly half size
+    if max_current >= 1600:
+        target_max = max_current // 2
+        # But don't go below our minimum threshold
+        target_max = max(target_max, max_dimension)
+    else:
+        target_max = max_dimension
+    
+    # Calculate scale factor
+    scale_factor = target_max / max_current
+    new_width = int(width * scale_factor)
+    new_height = int(height * scale_factor)
+    
+    # Ensure dimensions are even numbers (better for video processing)
+    new_width = new_width - (new_width % 2)
+    new_height = new_height - (new_width % 2)
+    
+    print(f"Resizing image from {width}x{height} to {new_width}x{new_height}")
+    print(f"Scale factor: {scale_factor:.3f}, Target max: {target_max}")
+    return image.resize((new_width, new_height), Image.Resampling.LANCZOS)
+
+
 for start_frame_idx in range(0, len(frame_names), step):
     # Prompt Grounding DINO to get the box coordinates on a specific frame
     print("start_frame_idx", start_frame_idx)
     img_path = os.path.join(video_dir, frame_names[start_frame_idx])
+    
+    # Load and resize image if needed
     pil_image = Image.open(img_path).convert("RGB")
-    image= Image.open(img_path).convert("RGB")
+    image = resize_image_if_needed(pil_image)
+    
+    # Save resized image temporarily for processing
+    temp_img_path = os.path.join(output_dir, "temp_resized.jpg")
+    image.save(temp_img_path, "JPEG", quality=95)
+    
     image_base_name = frame_names[start_frame_idx].split(".")[0]
     mask_dict = MaskDictionaryModel(promote_type = PROMPT_TYPE_FOR_VIDEO, mask_name = f"mask_{image_base_name}.npy")
     from torchvision.io import read_image
 
-    image_tensor = read_image(img_path).to(device).float() / 255.0
+    # Use the resized image for processing
+    image_tensor = read_image(temp_img_path).to(device).float() / 255.0
 
     print(f"Image tensor shape: {image_tensor.shape}")
     # Pass the PyTorch tensor directly to the predict function
@@ -344,7 +386,10 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     video_dir = args.input_dir
-    output_dir = args.output_dir
+    if output_dir != args.output_dir:
+        output_dir = f"./outputs_{image_folder_name}"
+    else:
+        output_dir = args.output_dir
     output_video_path = f"{output_dir}/output.mp4"
     CommonUtils.creat_dirs(output_dir)
     mask_data_dir = os.path.join(output_dir, "mask_data")
