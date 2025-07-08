@@ -182,7 +182,8 @@ for start_frame_idx in range(0, len(frame_names), step):
     
     # Load and resize image if needed
     pil_image = Image.open(img_path).convert("RGB")
-    image = resize_image_if_needed(pil_image)
+    image=pil_image
+    #image = resize_image_if_needed(pil_image)
     
     # Save resized image temporarily for processing
     temp_img_path = os.path.join(output_dir, "temp_resized.jpg")
@@ -378,18 +379,18 @@ create_video_from_images(result_dir, output_video_path, frame_rate=30)
 #     하나의 프레임을 2~4개의 crop (중앙 + 좌우) 로 잘라 Grounding DINO에 넣으면 recall 향상됨.
 
 #     이후 box 좌표를 전체 프레임 기준으로 다시 매핑하면 됨.
-
+import os
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="SAM2-HQ Tracking Pipeline")
     parser.add_argument('--input_dir', type=str, default=dir_name, help='Input directory containing video frames (default: datasets/images)')
     parser.add_argument('--output_dir', type=str, default=output_dir, help='Output directory for results (default: ./outputs_hq)')
     args = parser.parse_args()
+    input_dir=args.input_dir
+    video_dir = os.path.basename(os.path.normpath(input_dir))
+    output_dir = f"./outputs_{video_dir}"
+    print(f'video_dir: {video_dir}')
+    print(f'output_dir: {output_dir}')
 
-    video_dir = args.input_dir
-    if output_dir != args.output_dir:
-        output_dir = f"./outputs_{image_folder_name}"
-    else:
-        output_dir = args.output_dir
     output_video_path = f"{output_dir}/output.mp4"
     CommonUtils.creat_dirs(output_dir)
     mask_data_dir = os.path.join(output_dir, "mask_data")
@@ -400,7 +401,7 @@ if __name__ == "__main__":
     CommonUtils.creat_dirs(result_dir)
     # scan all the JPEG frame names in this directory
     frame_names = [
-        p for p in os.listdir(video_dir)
+        p for p in os.listdir(input_dir)
         if os.path.splitext(p)[-1] in [".jpg", ".jpeg", ".JPG", ".JPEG", ".png", ".PNG"]
     ]
     frame_names = natsorted(frame_names)  # 자연스러운 정렬 적용
