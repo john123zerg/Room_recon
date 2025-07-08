@@ -239,6 +239,15 @@ python white_background_object.py
 python TRELLIS/example_multi_image.py
 ```
 
+# Test with New data
+```bash
+cp -r datasets/iphone_data_john/images datasets/images_john
+```
+
+```bash
+
+```
+
 
 
 
