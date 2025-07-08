@@ -57,5 +57,6 @@ python project_back.py
 
 ### 8. Load the cad models and reorient
 ```bash
+cp ../../Room_recon/doc/load_models.py scripts/
 python scripts/load_models.py
 ```
