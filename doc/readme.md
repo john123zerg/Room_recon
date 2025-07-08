@@ -69,11 +69,25 @@ CUDA : 11.8
 Ubuntu : 24.04
 
 ```bash
+git clone https://github.com/john123zerg/Room_recon.git
+cd Room_recon
+```
+
+
+```bash
 conda create -n seggen python==3.10.16 -y
 conda activate seggen
 mkdir SegGen
 cd SegGen
 ```
+misc
+```bash
+gcc --version
+gcc++ --version
+ml GCC/11.3
+
+```
+
 
 Torch+cu118 installation
 
@@ -185,6 +199,13 @@ mkdir datasets
 mv images datasets
 rm -rf images.zip
 ```
+```bash
+pip install supervision
+pip install natsort
+pip install yapf
+pip install pycocotools
+pip install timm
+```
 
 ```bash
 mv ../Room_recon/doc/tracking.py ./tracking.py
@@ -195,15 +216,7 @@ pwd should show **Seggen**
 
 # EXAMPLES
 
-```bash
-pip install supervision
-pip install natsort
-pip install yapf
-pip install pycocotools
-pip install timm
 
-python tracking.py
-```
 
 ```bash
 python white_background_object.py
@@ -214,7 +227,13 @@ python TRELLIS/example_multi_image.py
 ```
 
 
-misc
+
+# Downloading data
+
 ```bash
-ml GCC/11.3
+wget https://huggingface.co/datasets/johnkimryno/VR/resolve/main/data_iphone.zip
+```
+
+```bash
+wget https://huggingface.co/datasets/johnkimryno/VR/resolve/main/iphone_data_john.zip
 ```
