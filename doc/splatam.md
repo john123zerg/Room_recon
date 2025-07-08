@@ -6,9 +6,10 @@
 ### 1. Clone the SplaTAM repository
 ```bash
 #Start at SegGen
-wget https://huggingface.co/datasets/johnkimryno/VR/resolve/main/SplaTAM%202.zip
-mv 'SplaTAM 2' SplaTAM.zip
-unzip SplaTAM%202
+wget https://huggingface.co/datasets/johnkimryno/VR/resolve/main/SplaTAM_.zip
+unzip SplaTAM_.zip
+rm SplaTAM_.zip
+mv SplaTAM_ SplaTAM
 cd SplaTAM
 
 git clone git@github.com:git@github.com:JonathonLuiten/diff-gaussian-rasterization-w-depth.git
@@ -20,3 +21,9 @@ cd ../
 
 pip install -r requirements.txt
 ```
+
+### 2. Download the data
+```bash
+wget https://huggingface.co/datasets/johnkimryno/VR/resolve/main/experiments.zip
+unzip experiments
+rm experiments.zip
