@@ -59,12 +59,14 @@ grounding_model = grounding_model.to(device)  # Explicitly move the model to the
 # setup the input image and text prompt for SAM 2 and Grounding DINO
 # VERY important: text queries need to be lowercased + end with a dot
 text = "chair, table, floor, wall."
-dir_name=f"datasets/images"
+import argparse  # 추가: 인수 파싱을 위해 argparse import
+image_folder_name=f'images'
+dir_name=f"datasets/{image_folder_name}"
 # `video_dir` a directory of JPEG frames with filenames like `<frame_index>.jpg`  
 # video_dir = "notebooks/videos/car"
 video_dir = dir_name
 # 'output_dir' is the directory to save the annotated frames
-output_dir = f"./outputs_hq"
+output_dir = f"./outputs_{image_folder_name}"
 # 'output_video_path' is the path to save the final video
 output_video_path = f"{output_dir}/output.mp4"
 # create the output directory
@@ -334,3 +336,28 @@ create_video_from_images(result_dir, output_video_path, frame_rate=30)
 #     하나의 프레임을 2~4개의 crop (중앙 + 좌우) 로 잘라 Grounding DINO에 넣으면 recall 향상됨.
 
 #     이후 box 좌표를 전체 프레임 기준으로 다시 매핑하면 됨.
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="SAM2-HQ Tracking Pipeline")
+    parser.add_argument('--input_dir', type=str, default=dir_name, help='Input directory containing video frames (default: datasets/images)')
+    parser.add_argument('--output_dir', type=str, default=output_dir, help='Output directory for results (default: ./outputs_hq)')
+    args = parser.parse_args()
+
+    video_dir = args.input_dir
+    output_dir = args.output_dir
+    output_video_path = f"{output_dir}/output.mp4"
+    CommonUtils.creat_dirs(output_dir)
+    mask_data_dir = os.path.join(output_dir, "mask_data")
+    json_data_dir = os.path.join(output_dir, "json_data")
+    result_dir = os.path.join(output_dir, "result")
+    CommonUtils.creat_dirs(mask_data_dir)
+    CommonUtils.creat_dirs(json_data_dir)
+    CommonUtils.creat_dirs(result_dir)
+    # scan all the JPEG frame names in this directory
+    frame_names = [
+        p for p in os.listdir(video_dir)
+        if os.path.splitext(p)[-1] in [".jpg", ".jpeg", ".JPG", ".JPEG", ".png", ".PNG"]
+    ]
+    frame_names = natsorted(frame_names)  # 자연스러운 정렬 적용
+    print(f'frame_names: {frame_names}')
+    # ... 이하 기존 코드 유지 ...
