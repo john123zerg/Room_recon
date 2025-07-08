@@ -242,6 +242,10 @@ python TRELLIS/example_multi_image.py
 # Test with New data
 ```bash
 cp -r datasets/iphone_data_john/images datasets/images_john
+find datasets/images_john -type f -name '*.depth' -delete
+python resize.py
+rm -rf datasets/images_john
+mv datasets/images_john_resized datasets/images_john
 ```
 
 ```bash
