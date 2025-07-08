@@ -191,11 +191,17 @@ mv ../Room_recon/doc/tracking.py ./tracking.py
 python tracking.py
 ```
 
-
+pwd should show **Seggen**
 
 # EXAMPLES
 
 ```bash
+pip install supervision
+pip install natsort
+pip install yapf
+pip install pycocotools
+pip install timm
+
 python tracking.py
 ```
 
@@ -207,3 +213,8 @@ python white_background_object.py
 python TRELLIS/example_multi_image.py
 ```
 
+
+misc
+```bash
+ml GCC/11.3
+```
